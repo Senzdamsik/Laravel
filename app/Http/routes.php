@@ -18,9 +18,16 @@ if(version_compare(PHP_VERSION, '7.2.0', '>=')) { error_reporting(E_ALL ^ E_NOTI
 
 Route::get('/', [
     'uses' => 'BlogController@index',
-    'as' => 'blog'   
+    'as'   => 'blog'
 ]);
 
-Route::get('/blog/show', function() {
-    return view('blog.show');
-});
+Route::get('/blog/{post}', [
+    'uses' => 'BlogController@show',
+    'as'   => 'blog.show'
+]);
+
+
+
+
+
+
