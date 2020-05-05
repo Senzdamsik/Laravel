@@ -1,6 +1,7 @@
 <div class="col-md-4">
     <aside class="right-sidebar">
-        {{-- <div class="search-widget">
+        <!--
+        <div class="search-widget">
             <div class="input-group">
               <input type="text" class="form-control input-lg" placeholder="Search for...">
               <span class="input-group-btn">
@@ -8,8 +9,9 @@
                     <i class="fa fa-search"></i>
                 </button>
               </span>
-            </div><!-- /input-group -->
-        </div> --}}
+            </div>
+        </div>
+        -->
 
         <div class="widget">
             <div class="widget-heading">
@@ -17,26 +19,12 @@
             </div>
             <div class="widget-body">
                 <ul class="categories">
-                    <li>
-                        <a href="#"><i class="fa fa-angle-right"></i> Web Development</a>
-                        <span class="badge pull-right">10</span>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-angle-right"></i> Web Design</a>
-                        <span class="badge pull-right">10</span>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-angle-right"></i> General</a>
-                        <span class="badge pull-right">10</span>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-angle-right"></i> DIY</a>
-                        <span class="badge pull-right">10</span>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-angle-right"></i> Facebook Development</a>
-                        <span class="badge pull-right">10</span>
-                    </li>
+                    @foreach ($categories as $category)
+                        <li>
+                            <a href="{{ route('category', $category->id) }}"><i class="fa fa-angle-right"></i> {{ $category->title }}</a>
+                            <span class="badge pull-right">{{ $category->posts->count() }}</span>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -90,7 +78,8 @@
             </div>
         </div>
 
-        {{-- <div class="widget">
+        <!--
+        <div class="widget">
             <div class="widget-heading">
                 <h4>Tags</h4>
             </div>
@@ -106,6 +95,8 @@
                     <li><a href="#">React Js</a></li>
                 </ul>
             </div>
-        </div> --}}
+        </div>
+
+        -->
     </aside>
 </div>
